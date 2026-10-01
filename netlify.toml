@@ -3,6 +3,5 @@
   publish = "dist/tesisat-site/browser"
 
 [build.environment]
-  NODE_VERSION = "22.13.0"
+  NODE_VERSION = "22.22.0"
   NPM_VERSION = "10"
-
