@@ -20,6 +20,19 @@ npm run serve:ssr:tesisat-site
 
 SSR sunucusu varsayılan olarak `http://localhost:4000` adresinde çalışır.
 
+## Netlify pipeline
+
+`main` branch'ine yapılan her push, GitHub Actions üzerinden production ortamına deploy edilir. Pipeline manuel olarak da **Actions > Netlify Deploy > Run workflow** yoluyla çalıştırılabilir.
+
+İlk deploy öncesinde:
+
+1. Netlify'da yeni bir site oluşturun.
+2. Netlify **Project configuration > General > Project information** bölümündeki Project ID değerini GitHub repository secret'ı olarak `NETLIFY_SITE_ID` adıyla ekleyin.
+3. Netlify **User settings > Applications > Personal access tokens** bölümünde bir token oluşturup GitHub repository secret'ı olarak `NETLIFY_AUTH_TOKEN` adıyla ekleyin.
+4. Değişiklikleri `main` branch'ine gönderin veya workflow'u manuel çalıştırın.
+
+GitHub secret'ları **Settings > Secrets and variables > Actions** bölümünden eklenir. Build ve yayın dizini ayarları `netlify.toml` içinde tutulur; Angular SSR desteği Netlify tarafından otomatik olarak Edge Function şeklinde yapılandırılır.
+
 ## Yayına almadan önce
 
 - `src/app/data/site-content.ts` içindeki işletme adı, telefon, WhatsApp, hizmet bölgesi ve çalışma saatlerini güncelleyin.
