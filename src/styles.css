@@ -1,0 +1,37 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Proxima Nova", "Avenir Next", Avenir, "Segoe UI", Arial, sans-serif;
+}
+
+@layer base {
+  html { scroll-behavior: smooth; scroll-padding-top: 5.5rem; }
+  body {
+    margin: 0;
+    min-width: 320px;
+    background: #fff;
+    color: #0f172a;
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+  }
+  a, button { -webkit-tap-highlight-color: transparent; }
+  ::selection { background: #bfdbfe; color: #172554; }
+}
+
+@layer components {
+  .nav-link { @apply text-sm font-semibold text-slate-600 transition hover:text-blue-700 focus-visible:rounded-sm focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-blue-700; }
+  .mobile-nav-link { @apply rounded-md px-3 py-3 text-base font-semibold text-slate-700 hover:bg-slate-50 hover:text-blue-700; }
+  .btn-primary { @apply inline-flex items-center justify-center gap-2 rounded-md bg-blue-700 px-5 py-3.5 text-sm font-bold text-white transition hover:bg-blue-800 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-700; }
+  .btn-secondary { @apply inline-flex items-center justify-center gap-2 rounded-md border border-slate-300 bg-white px-5 py-3.5 text-sm font-bold text-slate-800 transition hover:border-blue-700 hover:text-blue-700 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-700; }
+  .section-kicker { @apply text-sm font-bold uppercase tracking-[0.14em] text-blue-700; }
+  .section-title { @apply mt-3 text-3xl font-extrabold tracking-tight text-slate-950 sm:text-4xl; }
+  .section-copy { @apply mt-4 text-base leading-7 text-slate-600 sm:text-lg sm:leading-8; }
+  .contact-item { @apply flex min-h-40 flex-col justify-center border-slate-200 p-6 transition hover:bg-slate-50 sm:p-7; }
+  .contact-label { @apply text-xs font-extrabold uppercase tracking-[0.14em] text-blue-700; }
+  .skip-link { @apply fixed left-4 top-4 z-[100] -translate-y-24 rounded-md bg-slate-950 px-4 py-3 text-sm font-bold text-white transition focus:translate-y-0; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after { scroll-behavior: auto !important; transition-duration: 0.01ms !important; }
+}

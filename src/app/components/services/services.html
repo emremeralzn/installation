@@ -1,0 +1,27 @@
+<section id="hizmetler" class="scroll-mt-24 bg-white py-16 sm:py-20 lg:py-24">
+  <div class="mx-auto max-w-7xl px-5 sm:px-6 lg:px-8">
+    <div class="max-w-2xl">
+      <p class="section-kicker">Hizmetlerimiz</p>
+      <h2 class="section-title">Tesisat ihtiyacınıza uygun destek</h2>
+      <p class="section-copy">Ev ve iş yerlerindeki yaygın tesisat sorunları için ihtiyacı dinliyor, yerinde inceleme sonrası uygun çözümü belirliyoruz.</p>
+    </div>
+    <div class="mt-10 grid gap-px overflow-hidden rounded-lg border border-slate-200 bg-slate-200 sm:grid-cols-2 lg:grid-cols-3">
+      @for (service of services; track service.title) {
+        <article class="group bg-white p-6 transition hover:bg-slate-50 sm:p-7">
+          <div class="grid size-11 place-items-center rounded-md bg-blue-50 text-blue-700" aria-hidden="true">
+            @switch (service.icon) {
+              @case ('drop') { <svg viewBox="0 0 24 24" class="size-6 fill-none stroke-current" stroke-width="1.8"><path d="M12 2.8S6.2 9.2 6.2 14a5.8 5.8 0 0 0 11.6 0C17.8 9.2 12 2.8 12 2.8Z"/></svg> }
+              @case ('search') { <svg viewBox="0 0 24 24" class="size-6 fill-none stroke-current" stroke-width="1.8"><circle cx="10.5" cy="10.5" r="6.5"/><path d="m15.5 15.5 5 5M10.5 7v7M7 10.5h7"/></svg> }
+              @case ('drain') { <svg viewBox="0 0 24 24" class="size-6 fill-none stroke-current" stroke-width="1.8"><path d="M4 5h16M6 5v3a6 6 0 0 0 12 0V5M12 14v7M8 21h8"/></svg> }
+              @case ('tools') { <svg viewBox="0 0 24 24" class="size-6 fill-none stroke-current" stroke-width="1.8"><path d="m14 6 4-4 4 4-4 4M2.5 21.5l9.8-9.8M6.5 4.5l13 13M3 3l3.5 1.5L4.5 6.5 3 3Z"/></svg> }
+              @case ('heat') { <svg viewBox="0 0 24 24" class="size-6 fill-none stroke-current" stroke-width="1.8"><rect x="4" y="6" width="16" height="13" rx="1"/><path d="M8 6v13M12 6v13M16 6v13M7 3v3M17 19v2"/></svg> }
+              @default { <svg viewBox="0 0 24 24" class="size-6 fill-none stroke-current" stroke-width="1.8"><circle cx="12" cy="12" r="9"/><path d="M12 7v6l4 2"/></svg> }
+            }
+          </div>
+          <h3 class="mt-5 text-lg font-bold text-slate-950">{{ service.title }}</h3>
+          <p class="mt-3 text-[15px] leading-7 text-slate-600">{{ service.description }}</p>
+        </article>
+      }
+    </div>
+  </div>
+</section>

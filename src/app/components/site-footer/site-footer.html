@@ -1,0 +1,6 @@
+<footer class="border-t border-slate-800 bg-slate-950 text-slate-300">
+  <div class="mx-auto flex max-w-7xl flex-col gap-7 px-5 py-10 sm:px-6 md:flex-row md:items-end md:justify-between lg:px-8">
+    <div><p class="text-lg font-extrabold text-white">{{ business.name }}</p><p class="mt-2 max-w-md text-sm leading-6 text-slate-400">İstanbul'da su tesisatı, gider açma, kaçak tespiti ve tesisat onarım desteği.</p></div>
+    <div class="text-sm md:text-right"><div class="flex gap-5 md:justify-end"><a [href]="business.phoneHref" class="font-semibold text-white hover:text-blue-300">Telefon</a><a [href]="business.whatsappHref" target="_blank" rel="noopener noreferrer" class="font-semibold text-white hover:text-blue-300">WhatsApp</a></div><p class="mt-4 text-slate-500">© {{ currentYear }} {{ business.name }}. Tüm hakları saklıdır.</p></div>
+  </div>
+</footer>
